@@ -65,7 +65,7 @@ public class TwitterClient {
     private void beginListening(StatusListener listener) {
         TwitterStream stream = new TwitterStreamFactory(OAuthConfiguration.buildOAuthConfiguration()).getInstance();
         stream.addListener(listener);
-        stream.filter(TRACKING_KEYWORD);
+        stream.filter(TRACKING_KEYWORD); //this method creates inner thread, which access twitter data
     }
 
 }
