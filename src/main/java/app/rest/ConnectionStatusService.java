@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConnectionStatusService extends RESTService{
     @RequestMapping("/status")
-    public @ResponseBody ConnectionStatus getTwitterConnectionStatus() {
-        return TwitterConnectionStatus.getInstance().getConnectionStatus();
+    public @ResponseBody TwitterConnectionStatus getTwitterConnectionStatus() {
+        return TwitterConnectionStatus.getInstance();
     }
 }

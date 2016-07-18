@@ -3,16 +3,7 @@ package app.utils;
 /**
  * Created by Agi.
  */
-public enum  ConnectionStatus {
-    DISCONNECTED("Disconnected"),
-    CONNECTED("Connected");
-
-    String caption;
-    private ConnectionStatus(String caption) {
-        this.caption = caption;
-    }
-
-    public String getCaption() {
-        return caption;
-    }
+public class  ConnectionStatus {
+    public static final String CONNECTION_STATUS_OK = "Connected";
+    public static final String CONNECTION_STATUS_BAD_REQUEST = "Disconneted";
 }

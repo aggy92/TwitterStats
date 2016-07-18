@@ -12,7 +12,7 @@ import twitter4j.*;
  */
 public class TwitterClient {
 
-    public static final String TRACKING_KEYWORD = "reddit";
+    private static final String TRACKING_KEYWORD = "java";
 
     public TwitterClient() {
         listenToStream();
@@ -31,7 +31,7 @@ public class TwitterClient {
                     Logger.getLogger(this.getClass()).info(status.getText());
                     Logger.getLogger(this.getClass()).info(" -----------------------------------------------------------------");
                     TweetsMap.addTweet(status);
-                    TwitterConnectionStatus.getInstance().setConnectionStatus(ConnectionStatus.CONNECTED);
+                    TwitterConnectionStatus.getInstance().setConnectionStatus(ConnectionStatus.CONNECTION_STATUS_OK);
                 }
 
                 @Override
@@ -56,7 +56,7 @@ public class TwitterClient {
 
                 @Override
                 public void onException(Exception e) {
-                    TwitterConnectionStatus.getInstance().setConnectionStatus(ConnectionStatus.DISCONNECTED);
+                    TwitterConnectionStatus.getInstance().setConnectionStatus(ConnectionStatus.CONNECTION_STATUS_BAD_REQUEST);
                     e.printStackTrace();
                 }
             };

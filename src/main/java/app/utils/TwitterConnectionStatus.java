@@ -5,7 +5,7 @@ package app.utils;
  */
 public class TwitterConnectionStatus {
     private static TwitterConnectionStatus ourInstance = new TwitterConnectionStatus();
-    private ConnectionStatus connectionStatus;
+    private String connectionStatus;
     public static TwitterConnectionStatus getInstance() {
         return ourInstance;
     }
@@ -13,11 +13,11 @@ public class TwitterConnectionStatus {
     private TwitterConnectionStatus() {
     }
 
-    public ConnectionStatus getConnectionStatus() {
+    public String getConnectionStatus() {
         return connectionStatus;
     }
 
-    public void setConnectionStatus(ConnectionStatus connectionStatus) {
+    public void setConnectionStatus(String connectionStatus) {
         this.connectionStatus = connectionStatus;
     }
 }
